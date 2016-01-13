@@ -21,4 +21,6 @@
 --"profile_image_url_https":"https:\/\/pbs.tw...", "geo_enabled":false,
 --"profile_background_image_url":"http:\/\/abs.twimg..."
 
--- the script
+-- the script to have the structure of data
+tweets = LOAD '/data/twitterNL/' USING com.twitter.elephantbird.pig.load.JsonLoader('-nestedLoad') as (json:map[]);
+DESCRIBE tweets;
